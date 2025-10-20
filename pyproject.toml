@@ -1,20 +1,20 @@
 [build-system]
-requires = ["setuptools"]
+# Build with whatever torch the parent environment provides to avoid ABI mismatches
+requires = ["setuptools", "torch"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "lietorch"
-version = "0.2" 
-description = "Lie Groups for PyTorch"
+version = "0.3"
+description = "Lie Groups for PyTorch (updated for pytorch>2.6 and python>=3.11)"
 authors = [
-    { name="teedrz", email="zachteed@gmail.com" }
+    { name="teedrz", email="?@gmail.com" }
 ]
-version = "0.2"
-description = "Lie Groups for PyTorch"
 license = { text = "BSD-3-Clause" }
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 dependencies = [
-    "torch>=2.6.0",
+    # Match the parent env's torch; keep a lower bound for features used
+    "torch>=2.6",
     "numpy<2",
 ]
